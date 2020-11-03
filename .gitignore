@@ -1,0 +1,38 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../:\Robot projects\Joonas project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+tmp
+build
+dist
+target
+venv*
+.venv*
+.env
+*~
+MANIFEST
+results
+jasmine-results
+.idea
+.vscode
+.*project
+*.pyc
+*$py.class
+ext-lib
+*.iml
+.DS_Store
+doc/api/_build
+doc/libraries/*.html
+doc/userguide/RobotFrameworkUserGuide.html
+src/robotframework.egg-info
+log.html
+output.xml
+report.html
+__pycache__
+.classpath
+.settings
+.jython_cache
