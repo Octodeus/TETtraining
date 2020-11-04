@@ -53,3 +53,16 @@ Login to ParaBank
     Input Text    ${PASSWORD INPUT}    ${PASSWORD}
     Click Button    ${LOGIN BUTTON}
     Wait Until Element Is Visible    ${ACCOUNTS TITLE}
+
+Open new account
+    Click Link    ${NEW ACCOUNT LINK}
+    Wait Until Element Is Visible    ${NEW ACCOUNT TITLE}
+    Click Element    ${ACCOUNT TYPE SELECTOR}
+    Click Element    ${ACCOUNT SAVINGS OPTION}
+    Click Button    ${NEW ACCOUNT BUTTON}
+    Wait Until Element Is Visible    ${ACCOUNT OPENED TITLE}
+    ${ACCOUNT NUMBER} =    Get Text    ${NEW ACCOUNT ID}
+    Click link    ${ACCOUNTS OVERVIEW LINK}
+    Wait Until Page Contains Element    //a[contains(@href,'${ACCOUNT NUMBER}')]
+    #TODO:
+    #Validate that the account actually is a savings account

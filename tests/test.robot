@@ -15,3 +15,6 @@ Login with wrong credentials
 Login with right credentials
     Login to ParaBank
 
+Apply for new savings account
+    Open new account
+
