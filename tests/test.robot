@@ -17,4 +17,11 @@ Login with right credentials
 
 Apply for new savings account
     Open new account
+    Validate savings account creation
+
+Transfer Funds
+    Transfer funds
+
+Request Loan
+    Request loan
 
