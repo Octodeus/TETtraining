@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../resources/keyword.robot
-Suite Teardown    Close browser under test
+Suite Teardown    Close browser when done
 
 *** Test Cases ***
 Open ParaBank
@@ -8,20 +8,22 @@ Open ParaBank
     Open index page
 
 Login with wrong credentials
-    Wrong username
     Wrong password
+    Wrong username
     Wrong both
 
 Login with right credentials
-    Login to ParaBank
+    Login into ParaBank
 
-Apply for new savings account
+Open new bank account
     Open new account
-    Validate savings account creation
+    Validate New Account
 
-Transfer Funds
+Apply for a Loan
+    Request loan succsessful
+    Request loan fail
+
+Transfer funds to different account
     Transfer funds
-
-Request Loan
-    Request loan
-
+    Transfer negative funds
+    Transfer too many funds
