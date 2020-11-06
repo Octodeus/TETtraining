@@ -12,6 +12,8 @@ class SeleniumExample:
     more information here https://selenium-python.readthedocs.io/waits.html
     """
 
+    library = "SeleniumLibrary"
+
     def __get_library(self, lib):
         """
         Returns the library instance. It is required in order to instantiate
@@ -19,12 +21,12 @@ class SeleniumExample:
         """
         return BuiltIn().get_library_instance(lib)
 
-    def __element_presence(self, library, locator):
-        driver = self.__get_library(library)._current_browser()
+    def example_is_displayed(self, locator):
+        driver = self.__get_library(self.library).driver
         WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located(
             By.XPATH(locator))).is_displayed()
 
-    def display_example(self, library, locator):
-        #Checks that the element is displayed
-        self.__element_presence(library, locator).is_displayed()
-
+    def example_click(self, locator):
+        driver = self.__get_library(self.library).driver
+        WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located(
+            By.XPATH(locator))).click()
