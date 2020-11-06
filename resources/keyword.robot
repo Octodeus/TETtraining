@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ../libraries/GenerateCustomerData.py
+Library    ../libraries/SeleniumExample.py
 Variables    ../locators/locators.py
 
 *** Variables ***
@@ -144,8 +145,10 @@ Pay bills
     Wait Until Element Is Visible    ${PAYMENT SENT TITLE}
 
 Create a new banking customer
-    Click Link    Register
-    Wait Until Element Is Visible    ${SIGNING UP TITLE}
+    #Click Link    Register
+    Example Click Link    Register
+    #Wait Until Element Is Visible    ${SIGNING UP TITLE}
+    Example Is Displayed    ${SIGNING UP TITLE}
     ${GENERATE FIRSTNAME} =    generate firstname
     ${GENERATE LASTNAME} =    generate lastname
     ${GENERATE ADDRESS} =    generate address

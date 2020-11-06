@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-class SeleniumExample:
 
+class SeleniumExample:
     """
     after the WebDriverWait function you can add commands such as
     click()
@@ -22,11 +22,11 @@ class SeleniumExample:
         return BuiltIn().get_library_instance(lib)
 
     def example_is_displayed(self, locator):
-        driver = self.__get_library(self.library).driver
-        WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located(
-            By.XPATH(locator))).is_displayed()
+        selenium_driver = self.__get_library(self.library).driver
+        WebDriverWait(selenium_driver, 60).until(expected_conditions.presence_of_element_located((
+            By.XPATH, locator))).is_displayed()
 
-    def example_click(self, locator):
-        driver = self.__get_library(self.library).driver
-        WebDriverWait(driver, 60).until(expected_conditions.presence_of_element_located(
-            By.XPATH(locator))).click()
+    def example_click_link(self, locator):
+        selenium_driver = self.__get_library(self.library).driver
+        WebDriverWait(selenium_driver, 60).until(expected_conditions.presence_of_element_located((
+            By.LINK_TEXT, locator))).click()
